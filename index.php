@@ -12,6 +12,7 @@ $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud - Create</title>
     <link rel="stylesheet" href="style/index.css?v=<?= filemtime('style/index.css') ?>">
+    <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
     <h1>
@@ -28,7 +29,7 @@ $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </thead>
         <tbody>
             <?php foreach($cursos as $curso): ?>
-            <tr class='rows'>
+            <tr class='rows' onclick="window.location='vizualizar.php?id=<?=$curso['id'] ?>'">
                 <td><?= $curso['nome']?></td>
                 <td><?= $curso['categoria']?></td>
                 <td><?= $curso['professor']?></td>
